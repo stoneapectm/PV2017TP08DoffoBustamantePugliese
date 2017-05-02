@@ -13,64 +13,102 @@ import java.util.ArrayList;
  * @author Franco
  */
 public class Rectangulo {
-    private double baseRec;
-    private double alturaRec;
-    private Punto unPuntoOrigen;
-    private double supRec;
-    private double perRec;
+    private double base;
+    private double altura;
+    private String PuntoOrigen;
+    private double sup;
+    private double per;
     public Rectangulo() {
     }
-    
-    public Rectangulo(Punto unPuntoOrigen, Punto unPuntoB, Punto unPuntoC, Punto unPuntoD) {
-        this.unPuntoOrigen = unPuntoOrigen;
+
+    public Rectangulo(double base, double altura, String PuntoOrigen, double sup, double per) {
+        this.base = base;
+        this.altura = altura;
+        this.PuntoOrigen = PuntoOrigen;
+        this.sup = sup;
+        this.per = per;
     }
+
+   
+
+    /**
+     * @return the base
+     */
+    public double getBase() {
+        return base;
+    }
+
+    /**
+     * @param base the base to set
+     */
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+    /**
+     * @return the altura
+     */
+    public double getAltura() {
+        return altura;
+    }
+
+    /**
+     * @param altura the altura to set
+     */
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    /**
+     * @return the PuntoOrigen
+     */
+   
+
+    /**
+     * @return the sup
+     */
+    public double getSup() {
+        return sup;
+    }
+
+    /**
+     * @param sup the sup to set
+     */
+    public void setSup(double sup) {
+        this.sup = sup;
+    }
+
+    /**
+     * @return the per
+     */
+    public double getPer() {
+        return per;
+    }
+
+    /**
+     * @param per the per to set
+     */
+    public void setPer(double per) {
+        this.per = per;
+    }
+
+    /**
+     * @return the PuntoOrigen
+     */
+    public String getPuntoOrigen() {
+        return PuntoOrigen;
+    }
+
+    /**
+     * @param PuntoOrigen the PuntoOrigen to set
+     */
+    public void setPuntoOrigen(String PuntoOrigen) {
+        this.PuntoOrigen = PuntoOrigen;
+    }
+}
+    
   
     /**
      * @return the baseRec
      */
-    public double getBaseRec() {
-        return baseRec;
-    }
-    public double calcularSup(double base, double altura){
-        supRec=(base*altura);
-        return supRec;
-    }
-    public double calcularPer (double base, double altura){
-        perRec=(base*2+altura*2);
-        return perRec;
-    }
-    /**
-     * @param baseRec the baseRec to set
-     */
-    public void setBaseRec(double baseRec) {
-        this.baseRec = baseRec;
-    }
-
-    /**
-     * @return the alturaRec
-     */
-    public double getAlturaRec() {
-        return alturaRec;
-    }
-
-    /**
-     * @param alturaRec the alturaRec to set
-     */
-    public void setAlturaRec(double alturaRec) {
-        this.alturaRec = alturaRec;
-    }
-
-    /**
-     * @return the unPuntoOrigen
-     */
-    public Punto getUnPuntoOrigen() {
-        return unPuntoOrigen;
-    }
-
-    /**
-     * @param unPuntoOrigen the unPuntoOrigen to set
-     */
-    public void setUnPuntoOrigen(Punto unPuntoOrigen) {
-        this.unPuntoOrigen = unPuntoOrigen;
-    }
-}
+   
