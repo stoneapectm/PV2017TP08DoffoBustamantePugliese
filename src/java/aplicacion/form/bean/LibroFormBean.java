@@ -5,6 +5,8 @@
  */
 package aplicacion.form.bean;
 
+import aplicacion.datos.ColeccionLibros;
+import aplicacion.modelo.dominio.Libro;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -15,17 +17,18 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class LibroFormBean {
+private ColeccionLibros libros;
 private Libro libro;
 private String titulo;
 private String ISNB;
 private String autor;
 private double precio;
     public LibroFormBean() {
-        Libro= new ColeccionLibros();
+        libros= new ColeccionLibros();
     }
     public void agregarLibro(){
-        libro =new Libro(getTitulo(),getISNB(),getAutor(),getPrecio());
-        Libro.agregarLibros(libro);
+        setLibro(new Libro(getTitulo(),getISNB(),getAutor(),getPrecio()));
+        getLibros().agregarLibros(getLibro());
     }
     /**
      * @return the titulo
@@ -81,6 +84,34 @@ private double precio;
      */
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    /**
+     * @return the libros
+     */
+    public ColeccionLibros getLibros() {
+        return libros;
+    }
+
+    /**
+     * @param libros the libros to set
+     */
+    public void setLibros(ColeccionLibros libros) {
+        this.libros = libros;
+    }
+
+    /**
+     * @return the libro
+     */
+    public Libro getLibro() {
+        return libro;
+    }
+
+    /**
+     * @param libro the libro to set
+     */
+    public void setLibro(Libro libro) {
+        this.libro = libro;
     }
     
 }

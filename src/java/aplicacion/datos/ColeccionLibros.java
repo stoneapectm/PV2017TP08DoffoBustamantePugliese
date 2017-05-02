@@ -5,6 +5,7 @@
  */
 package aplicacion.datos;
 
+import aplicacion.modelo.dominio.Libro;
 import java.io.Serializable;
 import java.util.ArrayList;
 
