@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <p:panel id="pnlRectangulos" header="Alta de Rectangulos">
+            <h:form id="frmRectangulos">
+
+                <p:panelGrid id="tblMuestraRectangulos" columns="6">
+                    <p:dataTable id="dtTblRectangulos" value="" 
+                                 var="cadaRectangulo"
+                                 emptyMessage="No hay nada">
+                        <p:column headerText="Punto">
+                            <p:outputLabel value=""/>
+                        </p:column>
+                        <p:column headerText="Base">
+                            <p:outputLabel value=""/>
+                        </p:column>
+                        <p:column headerText="Altura">
+                            <p:outputLabel value=""/>
+                        </p:column>
+                        <p:column headerText="Superficie">
+                            <p:outputLabel value=""/>
+                        </p:column>                        
+                        <p:column headerText="Perimetro">
+                            <p:outputLabel value=""/>
+                        </p:column>     
+                        <p:column headerText="Accion">
+                            <p:commandButton icon="ui-icon-trash"
+                                             oncomplete="PF('eliminarRectangulo').show()"
+                                             update=":frmEliminarRegtangulo"
+                                             actionListener=""/>
+                        </p:column>
+
+                    </p:dataTable>
+                </p:panelGrid>
+            </h:form>
+        </p:panel>
+        <p:dialog id="dlgEliminarRectangulo" widgetVar="eliminarRectangulo"
+              header="eliminacion de Rectangulo" resizable="false"
+              showEffect="explode" hideEffect="explode" modal="true">
+        <h:form id="frmEliminarRectangulo">
+            <p:panelGrid id="tblEliminarRectangulo" columns="2">
+                <p:outputLabel for="Punto" value="Punto"/>
+                <p:outputLabel id="Punto" value=""/>
+                <p:outputLabel for="Base" value="Base"/>
+                <p:outputLabel id="Base" value=""/>
+                <p:outputLabel for="Altura" value="Altura"/>
+                <p:outputLabel id="Altura" value=""/>
+                <p:outputLabel for="Superficie" value="Superficie"/>
+                <p:outputLabel id="Superficie" value=""/>
+                <p:outputLabel for="Perimetro" value="Perimetro"/>
+                <p:outputLabel id="Perimetro" 
+                               value=""/>
+                <p:commandButton id="btnEliminarRectangulo" value="Eliminar"
+                                 oncomplete="PF('eliminarRectangulo').hide()"
+                                 actionListener=""
+                                 update=":frmRectangulos">
+                    <p:confirm header="Pedido de Confirmacion"
+                               message="¿Confirma Eliminar Rectangulo?" icon="ui-icon-alert"/>
+                </p:commandButton>                    
+                <p:commandButton id="btnCerrarModificarAuto"
+                                 value="Salir" 
+                                 oncomplete="PF('eliminarRectangulo').hide()"/>
+            </p:panelGrid>
+        </h:form>
+    </p:dialog>
+        <p:confirmDialog id="confirmacionDialogoRectangulo"
+            global="true" showEffect="fade" hideEffect="fade">
+            <h:form id="frmConfirmacionOperacionRect">
+                <p:commandButton value="SI" type="button"
+                                 styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                <p:commandButton value="NO" type="button"
+                                 styleClass="ui-confirmdialog-no" icon="ui-icon-close"
+                                 style="float:right;"/>
+            </h:form>
+        </p:confirmDialog>
+    </h:body>
+</html>
