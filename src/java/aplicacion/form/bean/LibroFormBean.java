@@ -23,8 +23,8 @@ private double precio;
     public LibroFormBean() {
         Libro= new ColeccionLibros();
     }
-    public void agregarAuto(){
-        auto=new Libro(getTitulo(),getISNB(),getAutor(),getPrecio());
+    public void agregarLibro(){
+        libro =new Libro(getTitulo(),getISNB(),getAutor(),getPrecio());
         Libro.agregarLibros(libro);
     }
     /**
