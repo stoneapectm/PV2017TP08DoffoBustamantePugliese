@@ -32,6 +32,14 @@ public class ColeccionRectangulos implements Serializable{
         rectangulos.add(d);
     }
 
+    public void eliminarRectangulo(Rectangulo unRectangulo){
+        for(Rectangulo a: rectangulos){
+            if(a.getPuntoOrigen()==unRectangulo.getPuntoOrigen()){
+                rectangulos.remove(rectangulos.indexOf(a));
+                break;
+            }
+        }
+    }
     /**
      * @return the rectangulos
      */
