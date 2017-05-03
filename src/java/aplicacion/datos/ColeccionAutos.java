@@ -35,7 +35,7 @@ public class ColeccionAutos implements Serializable {
     
     public void eliminarAutos(Auto unAuto){
         for(Auto a: autos){
-            if(a.getPatente()==unAuto.getPatente()){
+            if(a.getPatente()== unAuto.getPatente()){
                 autos.remove(autos.indexOf(a));
                 break;
             }

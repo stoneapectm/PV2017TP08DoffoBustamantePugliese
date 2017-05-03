@@ -23,10 +23,11 @@ public class RectanguloFormBean {
     private String punto;
 
     public RectanguloFormBean() {
+        rectangulos=new ColeccionRectangulos();
     }
 
     public void eliminarAuto(){
-        rectangulos.eliminarRectangulos(rectangulo);
+        getRectangulos().eliminarRectangulo(getRectangulo());
     }
     public void establecerRectangulo(Rectangulo unRectangulo){
         setRectangulo(unRectangulo);
@@ -111,6 +112,20 @@ public class RectanguloFormBean {
      */
     public void setPunto(String punto) {
         this.punto = punto;
+    }
+
+    /**
+     * @return the rectangulos
+     */
+    public ColeccionRectangulos getRectangulos() {
+        return rectangulos;
+    }
+
+    /**
+     * @param rectangulos the rectangulos to set
+     */
+    public void setRectangulos(ColeccionRectangulos rectangulos) {
+        this.rectangulos = rectangulos;
     }
 
 }

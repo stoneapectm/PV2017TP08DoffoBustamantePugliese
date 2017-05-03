@@ -16,31 +16,30 @@ and open the template in the editor.
             <h:form id="frmRectangulos">
 
                 <p:panelGrid id="tblMuestraRectangulos" columns="6">
-                    <p:dataTable id="dtTblRectangulos" value="" 
+                    <p:dataTable id="dtTblRectangulos" value="#{rectanguloFormBean.rectangulos.rectangulos}" 
                                  var="cadaRectangulo"
                                  emptyMessage="No hay nada">
                         <p:column headerText="Punto">
-                            <p:outputLabel value=""/>
+                            <p:outputLabel value="#{cadaRectangulo.puntoOrigen}"/>
                         </p:column>
                         <p:column headerText="Base">
-                            <p:outputLabel value=""/>
+                            <p:outputLabel value="#{cadaRectangulo.base}"/>
                         </p:column>
                         <p:column headerText="Altura">
-                            <p:outputLabel value=""/>
+                            <p:outputLabel value="#{cadaRectangulo.altura}"/>
                         </p:column>
                         <p:column headerText="Superficie">
-                            <p:outputLabel value=""/>
+                            <p:outputLabel value="#{cadaRectangulo.sup}"/>
                         </p:column>                        
                         <p:column headerText="Perimetro">
-                            <p:outputLabel value=""/>
+                            <p:outputLabel value="#{cadaRectangulo.per}"/>
                         </p:column>     
                         <p:column headerText="Accion">
                             <p:commandButton icon="ui-icon-trash"
                                              oncomplete="PF('eliminarRectangulo').show()"
-                                             update=":frmEliminarRegtangulo"
-                                             actionListener=""/>
+                                             update=":frmEliminarRectangulo"
+                                             actionListener="#{rectanguloFormBean.establecerRectangulo(cadaRectangulo)}"/>
                         </p:column>
-
                     </p:dataTable>
                 </p:panelGrid>
             </h:form>
@@ -51,19 +50,19 @@ and open the template in the editor.
         <h:form id="frmEliminarRectangulo">
             <p:panelGrid id="tblEliminarRectangulo" columns="2">
                 <p:outputLabel for="Punto" value="Punto"/>
-                <p:outputLabel id="Punto" value=""/>
+                <p:outputLabel id="Punto" value="#{rectanguloFormBean.rectangulo.puntoOrigen}"/>
                 <p:outputLabel for="Base" value="Base"/>
-                <p:outputLabel id="Base" value=""/>
+                <p:outputLabel id="Base" value="#{rectanguloFormBean.rectangulo.base}"/>
                 <p:outputLabel for="Altura" value="Altura"/>
-                <p:outputLabel id="Altura" value=""/>
+                <p:outputLabel id="Altura" value="#{rectanguloFormBean.rectangulo.altura}"/>
                 <p:outputLabel for="Superficie" value="Superficie"/>
-                <p:outputLabel id="Superficie" value=""/>
+                <p:outputLabel id="Superficie" value="#{rectanguloFormBean.rectangulo.sup}"/>
                 <p:outputLabel for="Perimetro" value="Perimetro"/>
                 <p:outputLabel id="Perimetro" 
-                               value=""/>
+                               value="#{rectanguloFormBean.rectangulo.per}"/>
                 <p:commandButton id="btnEliminarRectangulo" value="Eliminar"
                                  oncomplete="PF('eliminarRectangulo').hide()"
-                                 actionListener=""
+                                 actionListener="#{rectanguloFormBean.eliminarAuto()}"
                                  update=":frmRectangulos">
                     <p:confirm header="Pedido de Confirmacion"
                                message="¿Confirma Eliminar Rectangulo?" icon="ui-icon-alert"/>
